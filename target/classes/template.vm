@@ -1,0 +1,23 @@
+#macro (writeTable  $transactionList)
+    #set ($rowCount = 1)
+    #foreach ( $transaction in $transactionList)			##for loop for every transaction list to be displayed
+    <tr>
+        <td bgcolor="$bgcolor">$transaction.name</td>			##display the name of the transaction
+        <td bgcolor="$bgcolor">$transaction.amount</td>			##display the amount of the transaction
+        <td bgcolor="$bgcolor">$transaction.type</td>			##display the type(debit/credit) of the transaction
+    </tr>
+    #end
+#end
+
+<html>
+<head>
+    <title>Java Velocity Generated HTML Page</title>
+</head>
+<body>
+<h1 align="center">Transaction & More</h1>
+<h3 align="center">Transaction Amount</h3>
+<table align="center">#writeTable($Transactions)</table>
+<h3 align="center">Total Amount Remaining in Account : $TotalAmount </h3>
+<h4 align="center"> Thanks For Visiting </h4>
+</body>
+</html>
